@@ -1,0 +1,34 @@
+.movie-detail {
+  display: grid;
+  background-color: #fff;
+  grid-template-columns: repeat(10,1fr);
+  width: 800px;
+  grid-gap: 30px;
+}
+
+
+.image {
+    grid-column: 1/span 3;
+}
+
+.detail {
+    grid-column: 4/span 10;
+
+}
+
+.detail-card {
+    height: 330px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+
+/* .vote {
+    position: relative;
+    float: left;
+    padding: 20px;
+}
+.release-date {
+    position: relative;
+    float: left;
+    padding: 20px;
+} */

@@ -1,38 +1,182 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 80px 1fr 80px;
+}
+
+.grid-container > div {
   text-align: center;
+  font-size: 1em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  grid-area: header;
+  background-color: #394263;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  grid-area: main;
+  background-color: #394263;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer {
+  grid-area: footer;
+  background-color: #394263;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ccc;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  display: grid;
+  grid-template-areas:
+    "main-slider main-slider"
+    "main-banner main-banner"
+    "main-movie-list main-movie-list";
+  grid-template-rows: 380px 1fr 410px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-slider {
+  grid-area: main-slider;
+  background-color: #394263;
+  padding: 0 10px 0 10px;
 }
+.main-banner {
+  display: grid;
+  grid-area: main-banner;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+}
+.banner1 {
+  background-color: wheat;
+  height: 380px;
+  border-radius: 5px;
+  background-image: url("https://beinconnect.azureedge.net/uploads/h-module/31a0cb3c-0ac5-41d7-b619-964d8a227bee.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner2 {
+  background-color: violet;
+  height: 380px;
+  border-radius: 5px;
+  background-image: url("https://beinconnect.azureedge.net/uploads/h-module/bd75a527-3fd5-44a7-b19a-a5defa0889dc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-movie-list {
+  grid-area: main-movie-list;
+  background-color: #fff;
+}
+
+.movie-slide {
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-rows: repeat(3, 200px);
+  max-width: 1400px;
+  margin-left: 20px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.layout{
+  display: grid;
+  grid-column: 1;
+}
+
+
+
+.swiper-container {
+  grid-column: 1;
+  width: 100%;
+  height: 60vh;
+  max-height: 380px;
+
+}
+
+
+.slider-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* grid-gap: 20px; */
+  align-items: center;
+  height: 300px;
+}
+
+/* .grid > article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  height: 300px;
+} */
+.slider-article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  height: 300px
+}
+
+.grid > article img {
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+
+  .card-btn {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    text-decoration: none;
+  }
+
+  .card-btn:hover {
+    background-color: #394263;
+    transition: .5s;
+  }
